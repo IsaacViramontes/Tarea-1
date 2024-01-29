@@ -1,12 +1,11 @@
-//#include "pch.h"
 #include <iostream>
 #include <omp.h>
 
 //N es la cantidad de elementos a manejar en los arreglos
-#define N 1000
+#define N 2000
 
 //chunk es el tamaño que tendran los pedazos de los arreglos para que cada hilo creado se encargue de esta cantidad de elementos
-#define chunk 100
+#define chunk 500
 
 //mostrar permite manejar la cantidad de datos a imprimir
 #define mostrar 10
@@ -17,6 +16,9 @@ void imprimeArreglo(float* d);
 int main()
 {
     std::cout << "Sumando arreglos en paralelo!\n";
+    std::cout << "Cantidad de valores por arreglo: " << N << std::endl;
+    std::cout << "Cantidad de valores por hilo: " << chunk << std::endl;
+    std::cout << "Sumando arreglos en paralelo: " << mostrar << std::endl;
 
     //se declaran 3 arreglos: a, b y c, todos de tamaño N declarado anteriormente.
     //a y b seran arreglos con valores aleatorios
